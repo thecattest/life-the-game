@@ -30,6 +30,7 @@ class Board:
         global screen
         width = self.width * self.cell_size + self.left * 2
         height = self.height * self.cell_size + self.top * 3 + 40
+        width = width if width > 420 else 420
         screen = pygame.display.set_mode((width, height))
 
     # настройка внешнего вида
@@ -154,7 +155,7 @@ class Board:
 pygame.init()
 
 life = Board(20, 20)
-life.set_view(10, 10, 35)
+life.set_view(10, 10, 15)
 # life.load_progress('25.12.2019_1')
 
 running = True
